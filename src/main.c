@@ -1475,6 +1475,9 @@ tokenDefinition_t* getKnownToken() {
         case CHAIN_KIND_POA:
             numTokens = NUM_TOKENS_POA;
             break;
+        case CHAIN_KIND_ARTIS:
+            numTokens = NUM_TOKENS_ARTIS;
+            break;
         case CHAIN_KIND_RSK:
             numTokens = NUM_TOKENS_RSK;
             break;
@@ -1536,8 +1539,11 @@ tokenDefinition_t* getKnownToken() {
                 currentToken = (tokenDefinition_t *)PIC(&TOKENS_PIRL[i]);
                 break;
             case CHAIN_KIND_POA:
-                    currentToken = (tokenDefinition_t *)PIC(&TOKENS_POA[i]);
-                    break;
+                currentToken = (tokenDefinition_t *)PIC(&TOKENS_POA[i]);
+                break;
+            case CHAIN_KIND_ARTIS:
+                currentToken = (tokenDefinition_t *)PIC(&TOKENS_ARTIS[i]);
+                break;
             case CHAIN_KIND_RSK:
                 currentToken = (tokenDefinition_t *)PIC(&TOKENS_RSK[i]);
                 break;

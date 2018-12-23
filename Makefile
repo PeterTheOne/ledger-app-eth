@@ -69,6 +69,10 @@ else ifeq ($(CHAIN),poa)
 APP_LOAD_PARAMS += --path "44'/60'"
 DEFINES += CHAINID_UPCASE=\"POA\" CHAINID_COINNAME=\"POA\" CHAIN_KIND=CHAIN_KIND_POA CHAIN_ID=99
 APPNAME = "POA"
+else ifeq ($(CHAIN),artis)
+APP_LOAD_PARAMS += --path "44'/60'"
+DEFINES += CHAINID_UPCASE=\"ARTIS\" CHAINID_COINNAME=\"ARTIS\" CHAIN_KIND=CHAIN_KIND_ARTIS CHAIN_ID=246529
+APPNAME = "ARTIS"
 else ifeq ($(CHAIN),rsk)
 APP_LOAD_PARAMS += --path "44'/137'"
 DEFINES += CHAINID_UPCASE=\"RSK\" CHAINID_COINNAME=\"RBTC\" CHAIN_KIND=CHAIN_KIND_RSK CHAIN_ID=30
@@ -123,7 +127,7 @@ DEFINES += CHAINID_UPCASE=\"REOSC\" CHAINID_COINNAME=\"REOSC\" CHAIN_KIND=CHAIN_
 APPNAME = "REOSC"
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported CHAIN - use ethereum, ethereum_classic, expanse, poa, rsk, rsk_testnet, ubiq, wanchain, kusd, musicoin, pirl, akroma, atheios, callisto, ethersocial, ellaism, ether1, ethergem, gochain, mix, reosc)
+$(error Unsupported CHAIN - use ethereum, ethereum_classic, expanse, poa, artis, rsk, rsk_testnet, ubiq, wanchain, kusd, musicoin, pirl, akroma, atheios, callisto, ethersocial, ellaism, ether1, ethergem, gochain, mix, reosc)
 endif
 endif
 
@@ -215,4 +219,4 @@ include $(BOLOS_SDK)/Makefile.rules
 dep/%.d: %.c Makefile
 
 listvariants:
-	@echo VARIANTS CHAIN ethereum ethereum_classic expanse poa rsk rsk_testnet ubiq wanchain kusd pirl akroma atheios callisto ethersocial ether1 gochain musicoin ethergem mix ellaism reosc
+	@echo VARIANTS CHAIN ethereum ethereum_classic expanse poa artis rsk rsk_testnet ubiq wanchain kusd pirl akroma atheios callisto ethersocial ether1 gochain musicoin ethergem mix ellaism reosc
